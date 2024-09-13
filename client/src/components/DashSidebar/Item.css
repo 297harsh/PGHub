@@ -1,0 +1,24 @@
+/* .sidebar-optionName{
+    font-weight: 500 !important;
+    text-transform: capitalize !important;
+    font-family: "Source Sans Pro", sans-serif !important;
+    font-size: 14px !important;
+} */
+
+/* .sidebar-option svg {
+    margin-right: 10px !important;
+    font-size: 20px !important;
+} */
+
+/* .sidebar-option:hover{
+    background: #f1efef;
+} */
+.sidebar-option:hover svg {
+    transform: scale(1.3); /* Makes the icon 20% larger */
+    font-size: 20px !important;
+    /* color: #41a5a9 !important; */
+}
+
+/* .sidebar-optionName:hover {
+    color: #41a5a9 !important;
+} */
