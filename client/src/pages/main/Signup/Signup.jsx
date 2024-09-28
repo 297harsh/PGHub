@@ -14,7 +14,7 @@ import {
   Checkbox,
   FormControlLabel,
 } from "@mui/material";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -69,7 +69,8 @@ const Signup = () => {
         localStorage.setItem("accesstoken", data.token);
         toast.success("Registration successful");
         setTimeout(() => {
-          navigate("/");
+          // navigate("/");
+          navigate(-1);
         }, 3000);
       } else {
         toast.error(data.message || "Internal error, please try again later");
@@ -252,7 +253,6 @@ const Signup = () => {
             </Button>
           </Box>
         </Grid>
-        <ToastContainer position="bottom-right" autoClose={3000} />
       </Grid>
     </Slide>
   );

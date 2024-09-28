@@ -45,7 +45,7 @@ const MyGoogleMap = ({ gMapLocation = null, zoomLevel = 15 }) => {
     new google.maps.Marker({
       map: map,
       position: center,
-      title: 'Location Marker',
+      title: "Location Marker",
     });
 
     // Add a click event listener to get the clicked location

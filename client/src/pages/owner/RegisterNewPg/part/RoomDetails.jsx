@@ -53,8 +53,9 @@ export default function RoomDetails({
   const [openDialog, setOpenDialog] = useState(false);
   const [newRoomDetails, setNewRoomDetails] = useState({
     roomType: "",
-    numOfRoom: "",
+    numOfRoom: 0,
     RentOfBed: "",
+    numOfBed:0,
   });
 
   // Calculate total rooms and beds whenever roomInfo changes
@@ -138,6 +139,7 @@ export default function RoomDetails({
         [newRoomDetails.roomType]: {
           numOfRoom: newRoomDetails.numOfRoom,
           RentOfBed: newRoomDetails.RentOfBed,
+          numOfBed: getBedsForType(newRoomDetails.roomType)*newRoomDetails.numOfRoom
         },
       },
     }));

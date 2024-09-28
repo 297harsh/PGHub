@@ -24,6 +24,10 @@ function PrivateRoute({ element: Element }) {
     return <Navigate to="/signin" state={{ from: location }} />;
   }
 
+  if (location.pathname.startsWith("/admin")) {
+    return user.role === "admin" ? <Element /> : <Navigate to="/signup" />;
+  }
+
   if (location.pathname.startsWith("/owner")) {
     return user.role === "owner" ? <Element /> : <Navigate to="/signup" />;
   }
@@ -32,7 +36,6 @@ function PrivateRoute({ element: Element }) {
     return user.role === "renter" ? <Element /> : <Navigate to="/signup" />;
   }
 
-  // Default: if the path doesn't match owner/renter or role is incorrect
   return <Navigate to="/signin" />;
 }
 

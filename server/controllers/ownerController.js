@@ -4,6 +4,21 @@ const cloudinary = require("../config/cloudinary");
 const capitalizedText = (text) =>
   text[0].toUpperCase() + text.slice(1).toLowerCase();
 
+const getBedsForType = (type) => {
+  switch (type) {
+    case "single":
+      return 1;
+    case "double":
+      return 2;
+    case "triple":
+      return 3;
+    case "quadruple":
+      return 4;
+    default:
+      return 0;
+  }
+};
+
 exports.addNewPg = async (req, res) => {
   try {
     // get image details
@@ -13,7 +28,7 @@ exports.addNewPg = async (req, res) => {
     const { formValues: formValuesString } = req.body;
     const formValuesParsed = JSON.parse(formValuesString);
 
-    // console.log("Parsed formValues:", formValuesParsed);
+    console.log("Parsed formValues:", formValuesParsed);
 
     // Handle file uploads
     if (!files || files.length === 0) {
@@ -119,6 +134,9 @@ exports.addNewPg = async (req, res) => {
     // });
 
     // Save the new PG document to the database
+    console.log("------------------------------------------")
+    console.log("newPG :", newPG);
+
     await newPG.save();
 
     res.status(201).json({

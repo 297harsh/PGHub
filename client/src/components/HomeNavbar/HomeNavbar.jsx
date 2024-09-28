@@ -5,8 +5,7 @@ import Avatar from "@mui/material/Avatar";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { UserContext } from "../../context/UserData";
 import "./Navbar.css";
-import logo from "./logo.png";
-// import logo from "./PGHubLogoIcon.png";
+import logo from "../../assets/pghub/logo.png";
 
 const Navbar = () => {
   const { user } = useContext(UserContext);
@@ -38,7 +37,17 @@ const Navbar = () => {
     navigate("./signin");
   };
   const handleOnProfile = () => {
-    navigate("./owner");
+    if (user.role == "owner") {
+      return navigate("./owner");
+    }
+    if (user.role == "renter") {
+      return navigate("./renter");
+    }
+    if (user.role == "admin") {
+      return navigate("./admin");
+    }
+    console.log(4);
+    return navigate("./");
   };
 
   return (
@@ -51,13 +60,13 @@ const Navbar = () => {
       <div className={`navbar-right ${isMobile ? "mobile-menu-active" : ""}`}>
         <ul className="nav-options">
           <li>
-            <a href="#home">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
-            <a href="#about">About Us</a>
+            <a href="/#about-us">About Us</a>
           </li>
           <li>
-            <a href="#contact">Contact Us</a>
+            <a href="/#contact-us">Contact Us</a>
           </li>
         </ul>
 

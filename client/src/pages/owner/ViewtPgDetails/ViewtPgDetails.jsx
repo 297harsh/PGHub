@@ -3,8 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import {
   Box,
   Typography,
-  Backdrop,
-  CircularProgress,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -26,6 +24,7 @@ import {
   Amenities,
   ReviewCard,
   Map,
+  CirculerProcess,
 } from "../../../components";
 import RoomSquareCard from "./RoomSquareCard";
 
@@ -89,34 +88,7 @@ export default function ViewtPgDetails() {
   ];
 
   if (pgData == null) {
-    return (
-      <Box m="20px">
-        <Box
-          height="100vh"
-          position="relative"
-          width="100%"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Backdrop
-            sx={{
-              color: "#41a5a9",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "80%",
-              zIndex: (theme) => theme.zIndex.drawer + 1,
-              bgcolor: "inherit",
-            }}
-            open={true}
-          >
-            <CircularProgress sx={{ color: "#7a5af5" }} />
-          </Backdrop>
-        </Box>
-      </Box>
-    );
+    return <CirculerProcess />;
   }
 
   const displayValue = (value, amount) => {

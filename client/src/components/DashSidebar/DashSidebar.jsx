@@ -15,7 +15,7 @@ import {
   Logout,
   SettingsOutlined,
   FavoriteBorderOutlined,
-  PersonOutlined,
+  PersonOutlined, 
   ChatOutlined,
 } from "@mui/icons-material";
 

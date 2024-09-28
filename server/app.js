@@ -61,10 +61,11 @@ Cashfree.XEnvironment = Cashfree.Environment.SANDBOX;
 const authRoutes = require("./routes/authRoutes");
 // const bookingPgRoutes = require("./routes/bookingPgRoutes");
 const ownerRoutes = require("./routes/ownerRoutes");
-// const paymentRoutes = require("./routes/paymentRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
 const pgDetailsRoutes = require("./routes/pgDetailsRoutes");
 // const renterRoutes = require("./routes/renterRoutes");
-// const visitBookingRoutes = require("./routes/visitBookingRoutes");
+const visitBookingRoutes = require("./routes/visitBookingRoutes");
+const bookmarksRoutes = require("./routes/bookmarksRoutes");
 
 // paths
 app.use("/auth", authRoutes);
@@ -73,8 +74,9 @@ app.use("/owner", ownerRoutes);
 // app.use("/renter", renterRoutes);
 app.use("/pgDetails", pgDetailsRoutes);
 // app.use("/pgBooking", bookingPgRoutes);
-// app.use("/payment", paymentRoutes);
-// app.use("/visitBooking", visitBookingRoutes);
+app.use("/payment", paymentRoutes);
+app.use("/visitBooking", visitBookingRoutes);
+app.use("/bookmarks", bookmarksRoutes);
 
 app.get("*", (req, res) => {
   res

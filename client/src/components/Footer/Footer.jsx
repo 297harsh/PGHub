@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import logo from "./logo.png";
+import logo from "../../assets/pghub/logo.png";
 import "./Footer.css";
 
 const Footer = () => {
@@ -13,8 +13,8 @@ const Footer = () => {
         <div id="footer_links" className="d-flex flex-column align-items-end">
           <div className="d-flex flex-column">
             <Link to="/">Home</Link>
-            <a href="#about-us">About Us</a>
-            <a href="#contact-us">Contact Us</a>
+            <a href="/#about-us">About Us</a>
+            <a href="/#contact-us">Contact Us</a>
           </div>
 
           <div className="d-flex flex-column">

@@ -15,7 +15,7 @@ import {
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const serverapiUrl = import.meta.env.VITE_API_URL;
@@ -54,7 +54,9 @@ const Signin = () => {
         localStorage.setItem("accesstoken", data.token);
         toast.success("Login successful");
         setTimeout(() => {
-          navigate("/");
+          // navigate("/");
+          navigate(-1);
+
         }, 2500);
       } else {
         toast.error(data.message || "Internal error, please try again later.");
@@ -174,7 +176,6 @@ const Signin = () => {
             </Button>
           </Box>
         </Grid>
-        <ToastContainer position="bottom-right" autoClose={2000} />
       </Grid>
     </Slide>
   );
